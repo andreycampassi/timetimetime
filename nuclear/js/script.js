@@ -1,24 +1,23 @@
+// Conexao com MQTT
 var url = 'mqtt://testebatata123:teste123@broker.shiftr.io';          //token KEY and SECRET from shiftr.io
 var client = mqtt.connect(url, {clientId: 'web-page'});  //arbitrary identification
-var QoS = 1;
+var QoS = 1; // Quality of Service/TCP/UDP ?
 
+// Legado
 var monalisa_element = document.getElementById("monalisa");
 var html_element = document.getElementsByTagName("html")[0];
 
+// Inicio Time
+// Player de video da pagina web
 var vidContainer = document.getElementById("player");
+// Caminho para os Videos
 var videoBom = "video/video1.mp4";
 var videoRuim = "video/video2.mp4";
-
+// Legendas dos videos
 var trackBom = "video/video1.vtt";
 var trackRuim = "video/video2.vtt";
 
-var red = 255;
-var green = 255;
-var blue = 255;
-
-var red_element = document.getElementById("red");
-var green_element = document.getElementById("green");
-var blue_element = document.getElementById("blue");
+var playing = false;
 
 
 function updatePlayer(videoURL, trackURL){
@@ -40,6 +39,28 @@ function updateRuim(){
     // Buzzer
     // Alertas Ruins
 }
+
+function addMSGMQTT(){
+    vidContainer.addEventListener('ended',endHandler,false);
+    function endHandler(e) {
+        publishTopic('/videoStatus', "ended");
+        playing = false;
+    }
+    vidContainer.addEventListener('play',playHandler,false);
+    function playHandler(e) {
+        publishTopic('/videoStatus', "started");
+        playing = true;
+    }
+}
+// Fim Time
+
+// Legado
+var red = 255;
+var green = 255;
+var blue = 255;
+var red_element = document.getElementById("red");
+var green_element = document.getElementById("green");
+var blue_element = document.getElementById("blue");
 
 function updateRed(value)
 {
@@ -91,15 +112,13 @@ client.on('message', function(topic, message)
 {
     console.log('New message:', topic, message.toString());
 
-    if (topic == "/vibration")
-    {
-        if (parseInt(message) == 1)
-        {
-            monalisa_element.classList.add("vibrating");
-        }
-        else
-        {
-            monalisa_element.classList.remove("vibrating");
+    if(topic == "/startVideo" && !playing){
+        if(parseInt(message) == 1){
+            updateBom();
+            playing = true;
+        } else {
+            updateRuim();
+            playing = true;
         }
     }
 
