@@ -8,11 +8,9 @@ var html_element = document.getElementsByTagName("html")[0];
 var vidContainer = document.getElementById("player");
 var videoBom = "video/video1.mp4";
 var videoRuim = "video/video2.mp4";
-var legenda = document.getElementById("legenda");
 
-
-
-
+var trackBom = "video/video1.vtt";
+var trackRuim = "video/video2.vtt";
 
 var red = 255;
 var green = 255;
@@ -22,23 +20,22 @@ var red_element = document.getElementById("red");
 var green_element = document.getElementById("green");
 var blue_element = document.getElementById("blue");
 
-function updateBom(){
-    var track;
-    vidContainer.src = videoBom;
-    track = vidContainer.addTextTrack("video/video1.vtt");
-    track.mode = "showing";
 
-    vidContainer.play();
+function updatePlayer(videoURL, trackURL){
+   vidContainer.src = videoURL;
+   vidContainer.textTracks[trackURL==trackBom?0:1].mode = "showing";
+   vidContainer.textTracks[trackURL==trackBom?1:0].mode = "hidden";
+   vidContainer.play();
+}
+
+function updateBom(){
+    updatePlayer(videoBom, trackBom);
     // Da play no video
     // Leds da cidade
 }
 
 function updateRuim(){
-    var track;
-    vidContainer.src = videoRuim;
-    vidContainer.addTextTrack("video/video2.vtt");
-    track.mode = "showing";
-    vidContainer.play();
+    updatePlayer(videoRuim, trackRuim);
     // Da play no video ruim
     // Buzzer
     // Alertas Ruins
