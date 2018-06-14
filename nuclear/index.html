@@ -8,11 +8,21 @@
 
     <body>
 
-        <input id="red" type="range" min="1" max="255" step="1" value="255" onchange="updateRed(this.value)"/><br />
+        <button onclick="updateBom()">Video Bom</button>
+        <button onclick="updateRuim()">Video Ruim</button>
+
+        <!-- <input id="red" type="range" min="1" max="255" step="1" value="255" onchange="updateRed(this.value)"/><br />
         <input id="green" type="range" min="1" max="255" step="1" value="255" onchange="updateGreen(this.value)" /><br />
         <input id="blue" type="range" min="1" max="255" step="1" value="255" onchange="updateBlue(this.value)" />
 
         <div id="monalisa"></div>
+        -->
+
+        <video id="player"  width="320" height="240" controls>
+         <source src="movie.mp4" type="video/mp4">
+         <source src="movie.ogg" type="video/ogg">
+        Your browser does not support the video tag.
+        </video>
 
         <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
         <script src="js/script.js"></script>
