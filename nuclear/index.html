@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Nuclear Videos</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+
+        <input id="red" type="range" min="1" max="255" step="1" value="255" onchange="updateRed(this.value)"/><br />
+        <input id="green" type="range" min="1" max="255" step="1" value="255" onchange="updateGreen(this.value)" /><br />
+        <input id="blue" type="range" min="1" max="255" step="1" value="255" onchange="updateBlue(this.value)" />
+
+        <div id="monalisa"></div>
+
+        <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+        <script src="js/script.js"></script>
+
+    </body>
+</html>
