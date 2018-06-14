@@ -6,8 +6,9 @@ var monalisa_element = document.getElementById("monalisa");
 var html_element = document.getElementsByTagName("html")[0];
 
 var vidContainer = document.getElementById("player");
-var videoBom = "videoBom.mp4";
-var videoRuim = "videoRuim.mp4";
+var videoBom = "video/video1.mp4";
+var videoRuim = "video/video2.mp4";
+var legenda = document.getElementById("legenda");
 
 
 
@@ -22,14 +23,21 @@ var green_element = document.getElementById("green");
 var blue_element = document.getElementById("blue");
 
 function updateBom(){
+    var track;
     vidContainer.src = videoBom;
+    track = vidContainer.addTextTrack("video/video1.vtt");
+    track.mode = "showing";
+
     vidContainer.play();
     // Da play no video
     // Leds da cidade
 }
 
 function updateRuim(){
+    var track;
     vidContainer.src = videoRuim;
+    vidContainer.addTextTrack("video/video2.vtt");
+    track.mode = "showing";
     vidContainer.play();
     // Da play no video ruim
     // Buzzer
