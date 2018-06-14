@@ -16,7 +16,9 @@ var videoRuim = "video/video2.mp4";
 // Legendas dos videos
 var trackBom = "video/video1.vtt";
 var trackRuim = "video/video2.vtt";
+function LedAlerta(){
 
+}
 var playing = false;
 
 
@@ -24,6 +26,7 @@ function updatePlayer(videoURL, trackURL){
    vidContainer.src = videoURL;
    vidContainer.textTracks[trackURL==trackBom?0:1].mode = "showing";
    vidContainer.textTracks[trackURL==trackBom?1:0].mode = "hidden";
+   publishTopic("/startVideo");
    vidContainer.play();
 }
 
@@ -38,6 +41,14 @@ function updateRuim(){
     // Da play no video ruim
     // Buzzer
     // Alertas Ruins
+}
+
+function LedAlerta(){
+
+}
+
+function LedIlum(){
+
 }
 
 function addMSGMQTT(){
@@ -112,7 +123,7 @@ client.on('message', function(topic, message)
 {
     console.log('New message:', topic, message.toString());
 
-    if(topic == "/startVideo" && !playing){
+    if(topic == "/startVideo"){
         if(parseInt(message) == 1){
             updateBom();
             playing = true;

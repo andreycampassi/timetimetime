@@ -1,5 +1,6 @@
 #include <ESP8266WiFi.h>
 #include <MQTTClient.h>
+#include <Bounce2.h>
 
 const char client_id[] = "microcontroller";     //arbitrary identification
 const char client_key[] = "";                   //token KEY from shiftr.io
@@ -12,17 +13,29 @@ WiFiClient net;
 MQTTClient client;
 const int QoS = 1;
 
-const int vibration_pin = D0;
-const int red_pin = D5;
-const int green_pin = D6;
-const int blue_pin = D7;
+// Ultrasonic Distance
+// https://github.com/efduarte/pincello/blob/master/sensor-ultrasonic-distance-hc-sr04.md
+const int trigger_pin = D0;
+const int echo_pin = D1;
 
-int red = 255;
-int green = 255;
-int blue = 255;
+// LEDs
+// https://github.com/efduarte/pincello/blob/master/actuator-led.md
+const int led_alerta = D0;
+const int led_poste = D0;
+const int led_predio = D0;
+const int led_reator = D0;
+// RGB LED
 
-boolean vibrating = false;
-int count = 0;
+
+// PushButton
+// https://github.com/efduarte/pincello/blob/master/sensor-push-button.md
+const int button_pin = D0;
+Bounce button_debouncer = Bounce();
+
+// Buzzer
+// https://github.com/efduarte/pincello/blob/master/actuator-buzzer.md
+const int buzzer_pin = D0;
+int tones[] = {261, 277, 294, 311, 330, 349, 370, 392, 415, 440}; //Frequencies in Hertz
 
 void setup()
 {
