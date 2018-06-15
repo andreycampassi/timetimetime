@@ -42,7 +42,6 @@ void setup()
 {
     Serial.begin(115200);
 
-    //pinMode(vibration_pin, INPUT);
     pinMode(button_pin, INPUT);
     button_debouncer.attach(button_pin);
     button_debouncer.interval(5);
