@@ -13,29 +13,29 @@ WiFiClient net;
 MQTTClient client;
 const int QoS = 1;
 
-// Ultrasonic Distance
-// https://github.com/efduarte/pincello/blob/master/sensor-ultrasonic-distance-hc-sr04.md
-const int trigger_pin = D0;
-const int echo_pin = D1;
-
-// LEDs
-// https://github.com/efduarte/pincello/blob/master/actuator-led.md
-const int led_alerta = D0;
-const int led_poste = D0;
-const int led_predio = D0;
-const int led_reator = D0;
-// RGB LED
-
-
 // PushButton
 // https://github.com/efduarte/pincello/blob/master/sensor-push-button.md
 const int button_pin = D0;
 Bounce button_debouncer = Bounce();
 
+// Ultrasonic Distance
+// https://github.com/efduarte/pincello/blob/master/sensor-ultrasonic-distance-hc-sr04.md
+const int trigger_pin = D1;
+const int echo_pin = D2;
+
+// LEDs
+// https://github.com/efduarte/pincello/blob/master/actuator-led.md
+// const int led_alerta = D0;
+// const int led_poste = D0;
+// const int led_predio = D0;
+// const int led_reator = D0;
+// RGB LED
+
+
 // Buzzer
 // https://github.com/efduarte/pincello/blob/master/actuator-buzzer.md
-const int buzzer_pin = D0;
-int tones[] = {261, 277, 294, 311, 330, 349, 370, 392, 415, 440}; //Frequencies in Hertz
+//const int buzzer_pin = D0;
+//int tones[] = {261, 277, 294, 311, 330, 349, 370, 392, 415, 440}; //Frequencies in Hertz
 
 void setup()
 {
