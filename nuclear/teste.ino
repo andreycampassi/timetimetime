@@ -3,11 +3,11 @@
 #include <Bounce2.h>
 
 const char client_id[] = "microcontroller";     //arbitrary identification
-const char client_key[] = "";                   //token KEY from shiftr.io
-const char client_secret[] = "";                //token SECRET from shiftr.io
+const char client_key[] = "testebatata123";                   //token KEY from shiftr.io
+const char client_secret[] = "teste123";                //token SECRET from shiftr.io
 
-const char ssid[] = "";     //name of the used Wi-Fi network
-const char pass[] = "";     //password of the Wi-Fi network
+const char ssid[] = "Esgoto";     //name of the used Wi-Fi network
+const char pass[] = "ratorato";     //password of the Wi-Fi network
 
 WiFiClient net;
 MQTTClient client;
@@ -22,6 +22,7 @@ Bounce button_debouncer = Bounce();
 // https://github.com/efduarte/pincello/blob/master/sensor-ultrasonic-distance-hc-sr04.md
 const int trigger_pin = D1;
 const int echo_pin = D2;
+int distance = 0;
 
 // LEDs
 // https://github.com/efduarte/pincello/blob/master/actuator-led.md
@@ -41,19 +42,24 @@ void setup()
 {
     Serial.begin(115200);
 
-    pinMode(vibration_pin, INPUT);
-    pinMode(red_pin, OUTPUT);
-    pinMode(green_pin, OUTPUT);
-    pinMode(blue_pin, OUTPUT);
+    //pinMode(vibration_pin, INPUT);
+    pinMode(button_pin, INPUT);
+    button_debouncer.attach(button_pin);
+    button_debouncer.interval(5);
 
+    pinMode(trigger_pin, OUTPUT);
+    digitalWrite(trigger_pin, LOW);
+    pinMode(echo_pin, INPUT);
+
+    Serial.println("Pre WiFi0");
     connectWIFI();
+    Serial.println("Pos WiFi");
     client.begin("broker.shiftr.io", net);
     client.onMessage(messageReceived);
+    Serial.println("Pre MQTT");
     connectMQTT();
-
-    client.subscribe("/red");
-    client.subscribe("/green");
-    client.subscribe("/blue");
+    Serial.println("Pos MQTT");
+    client.subscribe("/startVideo");
 }
 
 void loop()
@@ -69,33 +75,30 @@ void loop()
         connectMQTT();
     }
 
-    setColor(red, green, blue);
 
-    if (digitalRead(vibration_pin) == HIGH)
+    button_debouncer.update();
+    if (button_debouncer.rose() == true)
     {
-        count = 0;
-        if (vibrating == false)
-        {
-            vibrating = true;
-            client.publish("/vibration", "1", false, QoS);
-            Serial.println("Published: /vibration 1");
-        }
+        Serial.println("Button pressed!");
+        client.publish("/startVideo", "1", false, QoS);
     }
-    else if (digitalRead(vibration_pin) == LOW)
+    if (button_debouncer.fell() == true)
     {
-        if(vibrating == true)
-        {
-            count++;
-            delay(10);
-            if (count > 30)
-            {
-                vibrating = false;
-                client.publish("/vibration", "0", false, QoS);
-                Serial.println("Published: /vibration 0");
-            }
-        }
+        //Serial.println("Button released!");
     }
 
+    digitalWrite(trigger_pin, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(trigger_pin, LOW);
+
+    distance = pulseIn(echo_pin, HIGH) * 0.034 / 2;
+    
+    //Serial.print("Distance (cm): ");
+    if(distance <= 15){
+        Serial.println("Started Video");
+        client.publish("/startVideo", "2", false, QoS);
+    }
+    //Serial.println(distance);
 }
 
 void connectWIFI()
@@ -124,29 +127,4 @@ void connectMQTT()
 void messageReceived(String &topic, String &payload)
 {
     Serial.println("New message: " + topic + " - " + payload);
-
-    if (topic == "/red")
-    {
-        red = payload.toInt();
-    }
-
-    if (topic == "/green")
-    {
-        green = payload.toInt();
-    }
-
-    if (topic == "/blue")
-    {
-        blue = payload.toInt();
-    }
-}
-
-void setColor(int r, int g, int b)
-{
-    r = map(r, 0, 255, 0, 1023);
-    g = map(g, 0, 255, 0, 1023);
-    b = map(b, 0, 255, 0, 1023);
-    analogWrite(red_pin, r);
-    analogWrite(green_pin, g);
-    analogWrite(blue_pin, b);
 }

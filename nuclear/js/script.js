@@ -26,7 +26,7 @@ function updatePlayer(videoURL, trackURL){
    vidContainer.src = videoURL;
    vidContainer.textTracks[trackURL==trackBom?0:1].mode = "showing";
    vidContainer.textTracks[trackURL==trackBom?1:0].mode = "hidden";
-   publishTopic("/startVideo");
+   //publishTopic("/startVideo");
    vidContainer.play();
 }
 
@@ -59,53 +59,16 @@ function addMSGMQTT(){
     }
     vidContainer.addEventListener('play',playHandler,false);
     function playHandler(e) {
-        publishTopic('/videoStatus', "started");
+        //publishTopic('/videoStatus', "started");
         playing = true;
     }
-}
-// Fim Time
-
-// Legado
-var red = 255;
-var green = 255;
-var blue = 255;
-var red_element = document.getElementById("red");
-var green_element = document.getElementById("green");
-var blue_element = document.getElementById("blue");
-
-function updateRed(value)
-{
-    red = value;
-    updateRGB();
-}
-
-function updateGreen(value)
-{
-    green = value;
-    updateRGB();
-}
-
-function updateBlue(value)
-{
-    red = blue;
-    updateRGB();
-}
-
-function updateRGB()
-{
-    red = red_element.value;
-    green = green_element.value;
-    blue = blue_element.value;
-    html_element.style.background = "rgb(" + red + "," + green + "," + blue + ")";
-    publishTopic('/red', red);
-    publishTopic('/green', green);
-    publishTopic('/blue', blue);
 }
 
 client.on('connect', function()
 {
     console.log("MQTT Connected!");
-    client.subscribe('/vibration', { qos: QoS });
+    //client.subscribe('/vibration', { qos: QoS });
+    client.subscribe('/startVideo', { qos: QoS });
 });
 
 client.on('error', function(e)
