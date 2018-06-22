@@ -93,7 +93,7 @@ void loop()
     distance = pulseIn(echo_pin, HIGH) * 0.034 / 2;
     
     //Serial.print("Distance (cm): ");
-    if(distance <= 15){
+    if(distance <= 25){
         Serial.println("Started Video");
         client.publish("/startVideo", "2", false, QoS);
     }
