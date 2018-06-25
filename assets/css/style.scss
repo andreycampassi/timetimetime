@@ -12,9 +12,17 @@
 }
 
 .body {
-	background-image: url("_images/bg.png");
+	background-image: url("../_images/bg.png");
+	background-repeat: repeat;
 }
 
 .main-content {
 	background-color: #ffffff;
+}
+
+img[src*="_images/essentials-"]
+{
+    float: left;
+    padding-right: 2em;
+    padding-bottom: 2em;
 }
