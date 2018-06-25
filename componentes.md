@@ -1,3 +1,5 @@
+---
+---
 # Componentes
 
 ## ESP8266 NodeMCU 1.0 Microcontroller

@@ -2,6 +2,11 @@
 ----
 TimeTimeTime é um projeto do time Time sobre a percepção do tempo profundo (deep time), composto por membros da turma de Interface Humano Computador 2018s1 da Unicamp. O projeto foi baseado no [Pincello], você pode entrar [aqui] para ter uma boa introdução sobre como nos organizamos para construir o projeto.
 
+# Objetivo
+
+# Quem Somos?
+----
+TimeTimeTime é um grupo de alunos tanto da Engenharia quanto da Ciência da Computação, cursando a matéria de Interface Humano-Computador da Universidade de Campinas, ministrada no primeiro semestre de 2018 pela Professora M. Cecília C. Baranauskas com assistência de @efduarte
 
 # Primeiros Passos
 ----
@@ -25,18 +30,21 @@ Como todo nosso projeto foi baseado no [Pincello], os primeiros passos para voc�
 | ------ | ------ |
 | Sublime | [plugins/dropbox/README.md][PlDb] |
 | Blabla | [plugins/github/README.md][PlGh] |
-| Biblioteca | Link |
-| ------ | ------ |
 | Sublime | [plugins/dropbox/README.md][PlDb] |
 | Blabla | [plugins/github/README.md][PlGh] |
 
+### Progresso
+-[x] Implementação do arquivo .ino
+-[x] Comunicação com MQTT
+-[x] Criação das páginas web
+-[x] Maquete física
+-[x] Projeto da maquete
+-[x] Listagem de Componentes
+-[ ] Mapa explicativo da maquete
+-[ ] Diagrama gráfico contendo componentes, software e comunicação entre eles
+-[ ] Ponto de vista do usuário
+-[ ] Processo do design
 
-
-#### Teste
-### To-do
-
- - Luz
- - Batata
 
 
 ### Agradecimentos

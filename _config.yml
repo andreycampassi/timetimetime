@@ -3,3 +3,6 @@ title: InsTimeTime
 description: Projeto de Interface Humano-Computador 2018s1 da Unicamp
 show_downloads: true
 google_analytics: UA-76168780-2
+plugins:
+  - jekyll-mentions
+  - jekyll-sitemap
