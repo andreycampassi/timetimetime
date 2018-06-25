@@ -28,24 +28,23 @@ Como todo nosso projeto foi baseado no [Pincello], os primeiros passos para voc�
  `teste bem legal` 
 
 ### Dependências
-| Programa | Link |
-| ------ | ------ |
-| Sublime | [plugins/dropbox/README.md][PlDb] |
-| Blabla | [plugins/github/README.md][PlGh] |
-| Sublime | [plugins/dropbox/README.md][PlDb] |
-| Blabla | [plugins/github/README.md][PlGh] |
+
+Programa | Link
+------ | ------
+Sublime | [plugins/dropbox/README.md][PlDb]
+Blabla | [plugins/github/README.md][PlGh]
 
 ### Progresso
--[x] Implementação do arquivo .ino
--[x] Comunicação com MQTT
--[x] Criação das páginas web
--[x] Maquete física
--[x] Projeto da maquete
--[x] Listagem de Componentes
--[ ] Mapa explicativo da maquete
--[ ] Diagrama gráfico contendo componentes, software e comunicação entre eles
--[ ] Ponto de vista do usuário
--[ ] Processo do design
+- [x] Implementação do arquivo .ino
+- [x] Comunicação com MQTT
+- [x] Criação das páginas web
+- [x] Maquete física
+- [x] Projeto da maquete
+- [x] Listagem de Componentes
+- [ ] Mapa explicativo da maquete
+- [ ] Diagrama gráfico contendo componentes, software e comunicação entre eles
+- [ ] Ponto de vista do usuário
+- [ ] Processo do design
 
 
 
