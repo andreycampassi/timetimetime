@@ -23,6 +23,11 @@ Bounce button_debouncer = Bounce();
 const int trigger_pin = D1;
 const int echo_pin = D2;
 int distance = 0;
+// 0 = Nada tocando
+// 1 = Video bom
+// 2 = Video ruim
+int status = 0;
+
 
 // LEDs
 // https://github.com/efduarte/pincello/blob/master/actuator-led.md
@@ -32,6 +37,10 @@ int distance = 0;
 // const int led_reator = D0;
 // RGB LED
 
+const int led_1 = D5;
+const int led_2 = D6;
+const int led_3 = D7;
+const int led_4 = D8;
 
 // Buzzer
 // https://github.com/efduarte/pincello/blob/master/actuator-buzzer.md
@@ -41,6 +50,11 @@ int distance = 0;
 void setup()
 {
     Serial.begin(115200);
+
+    pinMode(led_1, OUTPUT);
+    pinMode(led_2, OUTPUT);
+    pinMode(led_3, OUTPUT);
+    pinMode(led_4, OUTPUT);
 
     pinMode(button_pin, INPUT);
     button_debouncer.attach(button_pin);
@@ -59,6 +73,23 @@ void setup()
     connectMQTT();
     Serial.println("Pos MQTT");
     client.subscribe("/startVideo");
+}
+
+boolean changeLedStatus(int status, int newStatus){
+    if(status == newStatus)
+        return false;
+    if(newStatus == 1){
+        digitalWrite(led_1, HIGH);
+        digitalWrite(led_2, HIGH);
+        digitalWrite(led_3, HIGH);
+        digitalWrite(led_4, HIGH);
+    } else {
+        digitalWrite(led_1, LOW);
+        digitalWrite(led_2, LOW);
+        digitalWrite(led_3, LOW);
+        digitalWrite(led_4, LOW);
+    }
+    return true;
 }
 
 void loop()
@@ -80,6 +111,7 @@ void loop()
     {
         Serial.println("Button pressed!");
         client.publish("/startVideo", "1", false, QoS);
+        changeLedStatus(status, 1);
     }
     if (button_debouncer.fell() == true)
     {
@@ -96,6 +128,7 @@ void loop()
     if(distance <= 25){
         Serial.println("Started Video");
         client.publish("/startVideo", "2", false, QoS);
+        changeLedStatus(status, 1);
     }
     //Serial.println(distance);
 }
