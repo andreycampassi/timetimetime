@@ -37,21 +37,37 @@ Utilizado para controlar o fluxo de energia no circuito, essencial para o funcio
 
 ### 330Ω Resistor
 
-![Imagem de um resistor 330Ω](/assets/mages/essentials-330-resistor.png)
+![Imagem de um resistor 330Ω](/assets/images/essentials-330-resistor.png)
 
-Utilizado para previnir danos ao microcontrolador e para alimentar os LEDs de maneira a não queimá-los;
+Utilizado para previnir danos ao microcontrolador e para alimentar os LEDs de maneira a não queimá-los.
 
 Saiba mais [Resistores]
 
-_ Adaptado de [Pincello]/[Essentials] _
-
 ## PushButton
+
+![Imagem de um botão](/assets/images/push_button.png)
+
+Pequeno botão que utilizamos para fazer o acionamento de um vídeo.
 
 ## Sensor Ultrassônico de Presença
 
+![Imagem de um botão](/assets/images/HCSR04.png)
+
+Utlizado para detectar mãos curiosas chegando perto de uninas nucleares, de modo a informar o usuário o lado ruim de tal tecnologia.
+
 ## LEDs RGB
 
+![Imagem de um LED RGB](/assets/images/rgb_led.png)
+
+Os LEDs RGB foram utilizados para simular luzes vindas de uma torre de resfriamento de uma usina nuclear.
+
 ## LEDs Brancos
+
+![Imagem de um LED Branco](/assets/images/red_led.png)
+
+LEDs brancos foram utilizados para simular a iluminação de uma cidade.
+
+_ Adaptado de [Pincello]/[Essentials] _
 
 [//]: # (Referências
 To-do: Adicionar imagens do projeto
