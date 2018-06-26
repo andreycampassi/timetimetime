@@ -25,7 +25,7 @@ Como todo nosso projeto foi baseado no [Pincello], os primeiros passos para vocÃ
 
  `teste bem legal` 
 
- ![Imagem de um cabo Micro USB](_images/essentials-micro-usb-cable.png)
+ ![Imagem de um cabo Micro USB](assets/images/essentials-micro-usb-cable.png)
 
 ### DependÃªncias
 

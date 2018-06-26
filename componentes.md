@@ -4,26 +4,26 @@
 
 ## ESP8266 NodeMCU 1.0 Microcontroller
 
-![Imagem do Microcontrolador NodeMCU](_images/essentials-esp8266-nodemcu-10-microcontroller.png)
+![Imagem do Microcontrolador NodeMCU](/assets/images/essentials-esp8266-nodemcu-10-microcontroller.png)
 
 Este microcontrolador é parte central do projeto, ele é o responsável pelo controle de todos os outros componentes e de fazer a comunicação com a página web onde os vídeos serão apresentados ao público. Ele pode ser programado com a linguagem padrão do Arduino e conta com uma antena Wi-Fi, sendo ideal para IoT.
 
 ## Protoboard com 830 pontos
 
-![Imagem da Protoboard com 830 pontos](_images/essentials-830-and-430-points-breadboard.png)
+![Imagem da Protoboard com 830 pontos](/assets/images/essentials-830-and-430-points-breadboard.png)
 
 Para facilitar a prototipagem do projeto, como fizemos de maneira gradual, soldar as peças a todo momento seria um problema, para isso servem as Protoboards/Breadboards. Com isso ao invés da solda, simplesmente usamos os Jumpers subcitados para fazer a passagem de corrente eletrica. Saiba mais[Protoboard].  
 
 
 ## Cabo Micro USB
 
-![Imagem de um cabo Micro USB](_images/essentials-micro-usb-cable.png)
+![Imagem de um cabo Micro USB](/assets/images/essentials-micro-usb-cable.png)
 
 Usado tanto para alimentar a placa ESP8266 quanto para transferencia de arquivos do computador.
 
 ## Jumpers
 
-![Imagem de Jumpers](_images/essentials-rigid-jumper.png)
+![Imagem de Jumpers](/assets/images/essentials-rigid-jumper.png)
 
 Além dos jumpers rígidos originais oferecidos para o projeto e dos jumpers "flexíveis" macho-femea, utilizamos jumpers macho-macho para facilitar devido a sobreposição de jumpers rígidos e ausencia do tamanho ideal na hora de conectar certos componentes.
 
@@ -31,13 +31,13 @@ Além dos jumpers rígidos originais oferecidos para o projeto e dos jumpers "fl
 
 ### 10kΩ Resistor
 
-![Imagem de um resistor 10kΩ](_images/essentials-10k-resistor.png)
+![Imagem de um resistor 10kΩ](/assets/images/essentials-10k-resistor.png)
 
 Utilizado para controlar o fluxo de energia no circuito, essencial para o funcionamento do [PushButton] para controlar os estados _Pressionado_ e _Não Pressionado_.
 
 ### 330Ω Resistor
 
-![Imagem de um resistor 330Ω](_images/essentials-330-resistor.png)
+![Imagem de um resistor 330Ω](/assets/mages/essentials-330-resistor.png)
 
 Utilizado para previnir danos ao microcontrolador e para alimentar os LEDs de maneira a não queimá-los;
 
