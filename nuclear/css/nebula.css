@@ -1,0 +1,103 @@
+#canvas2{
+ position: fixed;
+ width: 100%;
+ height: 100%;
+ z-index: -1;
+}
+body, #foreground, #midground{
+ background: none;
+}
+.navbar {
+margin-top: 20px!important;
+}
+
+.teste-roxo {
+  font-size: 72px;
+  background: -webkit-linear-gradient(#C644FC, #5856D6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.form-signin{
+	max-width: 330px;
+	padding: 15px;
+	margin: 0 auto;
+}
+
+.centro {
+   width: 300px;
+   height: 300px;
+   position: absolute;
+   left: 50%;
+   top: 45%; 
+   margin-left: -150px;
+   margin-top: -150px;
+}
+
+.fb-like-box{
+	background-color:#e7e7e7;
+}
+
+.conteudo {
+padding: 15px;
+margin-bottom: 15px;
+font-size: 21px;
+font-weight: 200;
+line-height: 2.1428571435;
+color: inherit;
+}
+
+.mondo{
+	width: 30%;
+	margin-left: 25px;
+	border-radius: 6px;
+	background-color:#e7e7e7;
+}
+
+.grupomondo{
+	height:375px;
+	width: 30%;
+	margin-left: 25px;
+	border-radius: 6px;
+	background-color:#e7e7e7;
+}
+
+.halfmondo{
+	width: 45%;
+	margin-left: 15px;
+	border-radius: 6px;
+	background-color:#e7e7e7;
+}
+
+textarea.form-control {
+resize: none;
+}
+
+.bigmondo{
+	width: 94.5%;
+	margin-left: 25px;
+	border-radius: 6px;
+	background-color:#e7e7e7;
+}
+
+
+::-webkit-scrollbar{
+	height: 12px;
+	width: 12px;
+	border-radius: 6px;
+	background: #34495e;
+}
+
+::-webkit-scrollbar-thumb{
+	height: 12px;
+	width: 12px;
+	background: #E7E7E7;
+	border-radius: 6px;
+}
+
+::-webkit-scrollbar-corner{
+	height: 12px;
+	width: 12px;
+	background: #34495e;
+	border-radius: 6px;
+}

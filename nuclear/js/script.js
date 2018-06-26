@@ -39,6 +39,8 @@ function updatePlayer(videoURL, trackURL){
 function updateBom(){
     estadoAtual = PLAYING_GOOD;
     updatePlayer(videoBom, trackBom);
+    atabl = 0.2
+    imagem.src = src_bom;
     // Da play no video
     // Leds da cidade
 }
@@ -46,6 +48,8 @@ function updateBom(){
 function updateRuim(){
     estadoAtual = PLAYING_BAD;
     updatePlayer(videoRuim, trackRuim);
+    atabl = 2;
+    imagem.src = src_ruim;
     // Da play no video ruim
     // Buzzer
     // Alertas Ruins
@@ -56,6 +60,8 @@ function addMSGMQTT(){
     function endHandler(e) {
         publishTopic('/videoStatus', NOTHING_PLAYING);
         estadoAtual = NOTHING_PLAYING;
+        atabl = 0.5;
+        imagem.src = src_normal;
     }
     vidContainer.addEventListener('play',playHandler,false);
     function playHandler(e) {
@@ -90,14 +96,16 @@ client.on('message', function(topic, message)
 
     if(topic == "/startVideo"){
         if(parseInt(message) == PLAYING_GOOD){
-            if(estadoAtual == NOTHING_PLAYING){
+            if(estadoAtual != PLAYING_GOOD){
+                atabl = 0.3;
                 updateBom();
             } else {
                 AnimaClick(estadoAtual, PLAYING_GOOD);
             }
         } else if(parseInt(message) == PLAYING_BAD) {
-            if(estadoAtual == NOTHING_PLAYING || estadoAtual == PLAYING_GOOD){
+            if(estadoAtual != PLAYING_BAD){
                 updateRuim();
+                atabl = 1.0;
             } else {
                 AnimaClick(estadoAtual, PLAYING_BAD);
             }
