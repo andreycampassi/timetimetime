@@ -9,6 +9,14 @@ const char client_secret[] = "teste123";                //token SECRET from shif
 const char ssid[] = "Esgoto";     //name of the used Wi-Fi network
 const char pass[] = "ratorato";     //password of the Wi-Fi network
 
+const int PLAYING_GOOD = 1;
+const int PLAYING_BAD = 2;
+const int NOTHING_PLAYING = 0;
+const char CLIENT_VIDEO_PLAY = "/startVideo";
+const char CLIENT_VIDEO_STATUS = "/videoStatus";
+
+int estadoAtual = NOTHING_PLAYING;
+
 WiFiClient net;
 MQTTClient client;
 const int QoS = 1;
@@ -23,11 +31,6 @@ Bounce button_debouncer = Bounce();
 const int trigger_pin = D1;
 const int echo_pin = D2;
 int distance = 0;
-// 0 = Nada tocando
-// 1 = Video bom
-// 2 = Video ruim
-int status = 0;
-
 
 // LEDs
 // https://github.com/efduarte/pincello/blob/master/actuator-led.md
@@ -64,32 +67,29 @@ void setup()
     digitalWrite(trigger_pin, LOW);
     pinMode(echo_pin, INPUT);
 
-    Serial.println("Pre WiFi0");
     connectWIFI();
-    Serial.println("Pos WiFi");
     client.begin("broker.shiftr.io", net);
     client.onMessage(messageReceived);
-    Serial.println("Pre MQTT");
     connectMQTT();
-    Serial.println("Pos MQTT");
-    client.subscribe("/startVideo");
+
+    client.subscribe(CLIENT_VIDEO_PLAY);
+    estadoAtual = NOTHING_PLAYING;
 }
 
-boolean changeLedStatus(int status, int newStatus){
-    if(status == newStatus)
-        return false;
-    if(newStatus == 1){
-        digitalWrite(led_1, HIGH);
-        digitalWrite(led_2, HIGH);
-        digitalWrite(led_3, HIGH);
-        digitalWrite(led_4, HIGH);
-    } else {
-        digitalWrite(led_1, LOW);
-        digitalWrite(led_2, LOW);
-        digitalWrite(led_3, LOW);
-        digitalWrite(led_4, LOW);
+void changeLedStatus(int status, int newStatus){
+    if(status != newStatus){
+        if(newStatus == PLAYING_GOOD){
+            digitalWrite(led_1, HIGH);
+            digitalWrite(led_2, HIGH);
+            digitalWrite(led_3, HIGH);
+            digitalWrite(led_4, HIGH);
+        } else if(newStatus == PLAYING_BAD || newStatus == NOTHING_PLAYING){
+            digitalWrite(led_1, LOW);
+            digitalWrite(led_2, LOW);
+            digitalWrite(led_3, LOW);
+            digitalWrite(led_4, LOW);
+        }
     }
-    return true;
 }
 
 void loop()
@@ -109,13 +109,11 @@ void loop()
     button_debouncer.update();
     if (button_debouncer.rose() == true)
     {
+        // Apertaram Botao - Video Bom
         Serial.println("Button pressed!");
-        client.publish("/startVideo", "1", false, QoS);
-        changeLedStatus(status, 1);
-    }
-    if (button_debouncer.fell() == true)
-    {
-        //Serial.println("Button released!");
+
+        client.publish(CLIENT_VIDEO_PLAY, "1", false, QoS);
+        //changeLedStatus(status, 1);
     }
 
     digitalWrite(trigger_pin, HIGH);
@@ -127,8 +125,8 @@ void loop()
     //Serial.print("Distance (cm): ");
     if(distance <= 25){
         Serial.println("Started Video");
-        client.publish("/startVideo", "2", false, QoS);
-        changeLedStatus(status, 1);
+        client.publish(CLIENT_VIDEO_PLAY, "2", false, QoS);
+        //changeLedStatus(status, 1);
     }
     //Serial.println(distance);
 }
@@ -158,5 +156,13 @@ void connectMQTT()
 
 void messageReceived(String &topic, String &payload)
 {
+    int msgCode;
     Serial.println("New message: " + topic + " - " + payload);
+
+    if(topic == CLIENT_VIDEO_STATUS) 
+    {
+        msgCode = payload.toInt();
+        changeLedStatus(estadoAtual, msgCode);
+        estadoAtual = msgCode;
+    }
 }

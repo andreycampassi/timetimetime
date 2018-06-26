@@ -7,30 +7,20 @@
     </head>
 
     <body style="background-image:url(img/bg.jpg)">
+        <video id="player" controls>
+             <source src="movie.mp4" type="video/mp4">
+             <track id="legendaBom" label="Bom" kind="subtitles" srclang="pt-br" src="video/video1.vtt">
+             <track id="legendaRuim" label="Ruim" kind="subtitles" srclang="pt" src="video/video2.vtt">
+            Your browser does not support the video tag.
+        </video>
         <table>
             <tr>
             <td><button class="btn" onclick="updateBom()">Video Bom</button></td>
             <td><button class="btnRuim" onclick="updateRuim()">Video Ruim</button></td>
             </tr>
-            <tr>
-                <td><video id="player"  width="800" height="600" controls>
-                 <source src="movie.mp4" type="video/mp4">
-                 <track id="legendaBom" label="Bom" kind="subtitles" srclang="pt-br" src="video/video1.vtt">
-                 <track id="legendaRuim" label="Ruim" kind="subtitles" srclang="pt" src="video/video2.vtt">
-                Your browser does not support the video tag.
-                </video></td>
-            </tr>
         </table>
-
-        <!-- LEGADO <input id="red" type="range" min="1" max="255" step="1" value="255" onchange="updateRed(this.value)"/><br />
-        <input id="green" type="range" min="1" max="255" step="1" value="255" onchange="updateGreen(this.value)" /><br />
-        <input id="blue" type="range" min="1" max="255" step="1" value="255" onchange="updateBlue(this.value)" />
-
-        <div id="monalisa"></div>
-        -->
 
         <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
         <script src="js/script.js"></script>
-
     </body>
 </html>
