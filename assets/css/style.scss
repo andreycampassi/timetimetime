@@ -1,5 +1,9 @@
 ---
 ---
+.body { 
+	background: url("../../_images/bg.png");
+	background-repeat: repeat;
+}
 
 @import 'jekyll-theme-cayman';
 .page-header {
@@ -9,11 +13,6 @@
 	background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	/* Moonlit Asteroid from https://uigradients.com/#MoonlitAsteroid */
-}
-
-.body { 
-	background: url("../../_images/bg.png");
-	background-repeat: repeat;
 }
 
 .main-content {
