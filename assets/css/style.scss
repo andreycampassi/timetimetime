@@ -1,9 +1,5 @@
 ---
 ---
-.body { 
-	background: url("../../_images/bg.png");
-	background-repeat: repeat;
-}
 
 @import 'jekyll-theme-cayman';
 .page-header {
@@ -15,8 +11,17 @@
 	/* Moonlit Asteroid from https://uigradients.com/#MoonlitAsteroid */
 }
 
+.body { 
+	background-image: url("../images/bg.png");
+	background-repeat: repeat;
+}
+
 .main-content {
 	background-color: #ffffff;
+}
+
+.main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
+    color: #0F2027;
 }
 
 img[src*="_images/essentials-"]
