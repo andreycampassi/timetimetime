@@ -81,3 +81,7 @@ input
   background-image: linear-gradient(to bottom, #fc3c3c, #d93434);
   text-decoration: none;
 }
+
+video {
+  object-fit: fill;
+}
