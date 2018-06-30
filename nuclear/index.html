@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <meta charset="UTF-8">
-        <title>Nuclear Videos</title>
-        <link rel="stylesheet" href="css/style.css">
-    </head>
 
-    <body style="background-image:url(img/bg.jpg)">
-        <canvas style="display:none" id="canvas" width="285" height="285"></canvas>
-<canvas style="display:none" id="canvas3" width="570" height="570"></canvas>
-<canvas id="canvas2" style="
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Nuclear Videos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="background-image:url(img/bg.jpg)">
+    <canvas style="display:none" id="canvas" width="285" height="285"></canvas>
+    <canvas style="display:none" id="canvas3" width="570" height="570"></canvas>
+    <canvas id="canvas2" style="
     width: 100%;
     height: 100%;
     z-index:  -1;
@@ -22,21 +23,21 @@
     left: 0px;
     top: 0px;
 "></canvas>
-        <video id="player"  style="
+    <video id="player" style="
     width: 90%;
     height: 90%;
     position: fixed;
     left: 5%;
     top: 5%;
 " controls>
-             <source src="movie.mp4" type="video/mp4">
-             <track id="legendaBom" label="Bom" kind="subtitles" srclang="pt-br" src="video/video1.vtt">
-             <track id="legendaRuim" label="Ruim" kind="subtitles" srclang="pt" src="video/video2.vtt">
-            Your browser does not support the video tag.
-        </video>
+        <source src="movie.mp4" type="video/mp4">
+        <track id="legendaBom" label="Bom" kind="subtitles" srclang="pt-br" src="video/video1.vtt">
+        <track id="legendaRuim" label="Ruim" kind="subtitles" srclang="pt" src="video/video2.vtt"> Your browser does not support the video tag.
+    </video>
 
-        <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
-        <script src="js/script.js"></script>
-        <script src="js/nebula-canvas.js"></script>
-    </body>
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/nebula-canvas.js"></script>
+</body>
+
 </html>

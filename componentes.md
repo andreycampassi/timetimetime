@@ -51,9 +51,15 @@ Pequeno botão que utilizamos para fazer o acionamento de um vídeo.
 
 ## Sensor Ultrassônico de Presença
 
-![Imagem de um botão](/assets/images/HCSR04.png)
+![Imagem de um sensor ultrassônico de presença](/assets/images/HCSR04.png)
 
 Utlizado para detectar mãos curiosas chegando perto de uninas nucleares, de modo a informar o usuário o lado ruim de tal tecnologia.
+
+## Servo Motor
+
+![Imagem de um motor servo](/assets/images/servo.png)
+
+Utilizado para refletir a passagem do tempo no logo do Time
 
 ## LEDs RGB
 
@@ -63,11 +69,11 @@ Os LEDs RGB foram utilizados para simular luzes vindas de uma torre de resfriame
 
 ## LEDs Brancos
 
-![Imagem de um LED Branco](/assets/images/red_led.png)
+![Imagem de um LED Branco](/assets/images/white_led.png)
 
-LEDs brancos foram utilizados para simular a iluminação de uma cidade.
+4 LEDs brancos foram utilizados para simular a iluminação de uma cidade.
 
-_ Adaptado de [Pincello]/[Essentials] _
+__ Adaptado de [Pincello]/[Essentials] __
 
 [//]: # (Referências
 To-do: Adicionar imagens do projeto
