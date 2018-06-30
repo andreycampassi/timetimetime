@@ -75,14 +75,12 @@ Os LEDs RGB foram utilizados para simular luzes vindas de uma torre de resfriame
 
 __ Adaptado de [Pincello]/[Essentials] __
 
-[//]: # (Referências
-To-do: Adicionar imagens do projeto
-Adicionar links para pushbutton, resistores e ultrassom
-)
+[//]: # (Referências)
+[//]: # (To-do: Adicionar imagens do projeto)
+[//]: # (Adicionar links para pushbutton, resistores e ultrassom)
 
    [Essentials]: <https://efduarte.github.io/pincello/#/essentials>
    [Pincello]: <https://efduarte.github.io/pincello/#/>
    [Protoboard]: <https://learn.sparkfun.com/tutorials/how-to-use-a-breadboard>
    [PushButton]:
    [Resistores]:
-   
