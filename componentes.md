@@ -57,7 +57,7 @@ Utlizado para detectar mãos curiosas chegando perto de uninas nucleares, de mod
 
 ## Servo Motor
 
-![Imagem de um motor servo](/assets/images/servo.png)
+![Imagem de um motor servo](/assets/images/Servo.png)
 
 Utilizado para refletir a passagem do tempo no logo do Time
 
