@@ -17,7 +17,7 @@
 ![Torre de resfriamento feita com argila, rachada](/assets/photos/torrequebrada.jpeg)
 
 ## Teste Video
-![Video Apresentação](/assets/video/movie.mp4)
+[Video Apresentação](/assets/video/movie.mp4)
 
 [//]: # (TBD)
 
