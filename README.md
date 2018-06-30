@@ -1,3 +1,5 @@
+---
+---
 # Bem-vindo ao TimeTimeTime
 ---
 TimeTimeTime é um projeto do time Time sobre a percepção do tempo profundo (deep time), composto por membros da turma de Interface Humano Computador 2018s1 da Unicamp. O projeto foi baseado no [Pincello], você pode entrar [aqui] para ter uma boa introdução sobre como nos organizamos para construir o projeto.
@@ -49,7 +51,6 @@ Sublime | TBD
 ### Agradecimentos
 
 
-
 [//]: # (Referências)
 
    [SaibaMais]: <https://andreycampassi.github.io/timetimetime/sobre>
@@ -59,4 +60,3 @@ Sublime | TBD
    [MQTT-Broker]: <https://efduarte.github.io/pincello/#/fs-how-to-configure-the-mqtt-broker>
    [Microcontroller]:<https://efduarte.github.io/pincello/#/fs-how-to-program-the-microcontroller>
    [BCTutorial]: <https://efduarte.github.io/pincello/#/fs-basic-communication-tutorial>
-
