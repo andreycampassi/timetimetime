@@ -6,33 +6,28 @@ TimeTimeTime é um projeto do time Time sobre a percepção do tempo profundo (d
 
 # Quem Somos?
 ---
-TimeTimeTime é um grupo de alunos tanto da Engenharia quanto da Ciência da Computação, cursando a matéria de Interface Humano-Computador da Universidade de Campinas, ministrada no primeiro semestre de 2018 pela Professora M. Cecília C. Baranauskas com assistência de @efduarte
+TimeTimeTime é um grupo de alunos tanto da Engenharia quanto da Ciência da Computação, cursando a matéria de Interface Humano-Computador da Universidade de Campinas, ministrada no primeiro semestre de 2018 pela Professora M. Cecília C. Baranauskas com assistência de @efduarte. [Saiba Mais]
 
 # Primeiros Passos
 ---
 Como todo nosso projeto foi baseado no [Pincello], os primeiros passos para você replicar o nosso trabalho estão listados no site do @efduarte.
 
 ### Referências
-* [Pincello] - Como nós aprendemos do zero 
+* [Pincello] - Como aprendemos a mexer com o NodeMCU.
 
 ### Tutoriais
 
 | Lib | Link |
 | ------ | ------ |
-| MQTT Broker | [plugins/dropbox/README.md][PlDb] |
-| Programando NodeMCU | [plugins/github/README.md][PlGh] |
-| Comunicação Básica | [plugins/github/README.md][PlGh] |
-
- `teste bem legal` 
-
- ![Imagem de um cabo Micro USB](assets/images/essentials-micro-usb-cable.png)
+| MQTT Broker | [MQTT-Broker] |
+| Programando NodeMCU | [Microcontroller] |
+| Comunicação Básica | [BCTutorial] |
 
 ### Dependências
 
 Programa | Link
 ------ | ------
-Sublime | [plugins/dropbox/README.md][PlDb]
-Blabla | [plugins/github/README.md][PlGh]
+Sublime | TBD
 
 ### Progresso
 - [x] Implementação do arquivo .ino
@@ -41,10 +36,13 @@ Blabla | [plugins/github/README.md][PlGh]
 - [x] Maquete física
 - [x] Projeto da maquete
 - [x] Listagem de Componentes
-- [ ] Mapa explicativo da maquete
-- [ ] Diagrama gráfico contendo componentes, software e comunicação entre eles
-- [ ] Ponto de vista do usuário
-- [ ] Processo do design
+- [x] Mapa explicativo da maquete
+- [x] Diagrama gráfico contendo componentes, TBD--> software e comunicação entre eles
+- [x] Ponto de vista do usuário
+- [x] Processo do design
+- [ ] Arrumar links e referências
+- [ ] Documentar comunicação entre Software-Hardware
+- [ ] Detalhar componentes na maquete
 
 
 
@@ -54,7 +52,12 @@ Blabla | [plugins/github/README.md][PlGh]
 
 [//]: # (Referências)
 
-   [Pincello]: <https://efduarte.github.io/pincello/#/>
-   [aqui]: <https://efduarte.github.io/pincello/#/>
-   [Sublime]: <https://www.sublimetext.com/>
+    [Saiba Mais]: <https://andreycampassi.github.io/timetimetime/sobre>
+    [Pincello]: <https://efduarte.github.io/pincello/#/>
+    [aqui]: <https://efduarte.github.io/pincello/#/>
+    [Sublime]: <https://www.sublimetext.com/>
+    [MQTT-Broker]: <https://efduarte.github.io/pincello/#/fs-how-to-configure-the-mqtt-broker>
+    [Microcontroller]:<https://efduarte.github.io/pincello/#/fs-how-to-program-the-microcontroller>
+    [BCTutorial]: <https://efduarte.github.io/pincello/#/fs-basic-communication-tutorial>
+
    

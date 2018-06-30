@@ -82,5 +82,7 @@ __ Adaptado de [Pincello]/[Essentials] __
    [Essentials]: <https://efduarte.github.io/pincello/#/essentials>
    [Pincello]: <https://efduarte.github.io/pincello/#/>
    [Protoboard]: <https://learn.sparkfun.com/tutorials/how-to-use-a-breadboard>
-   [PushButton]:
-   [Resistores]:
+   [PushButton]: <https://efduarte.github.io/pincello/#/sensor-push-button>
+   [Resistores]:  <https://efduarte.github.io/pincello/#/essentials?id=_330%ce%a9-resistor>
+   [LED]: <https://efduarte.github.io/pincello/#/actuator-led>
+   [LEDRGB]: <https://efduarte.github.io/pincello/#/actuator-rgb-led>
