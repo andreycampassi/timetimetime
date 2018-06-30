@@ -6,7 +6,7 @@ TimeTimeTime é um projeto do time Time sobre a percepção do tempo profundo (d
 
 # Quem Somos?
 ---
-TimeTimeTime é um grupo de alunos tanto da Engenharia quanto da Ciência da Computação, cursando a matéria de Interface Humano-Computador da Universidade de Campinas, ministrada no primeiro semestre de 2018 pela Professora M. Cecília C. Baranauskas com assistência de @efduarte. [Saiba Mais]
+TimeTimeTime é um grupo de alunos tanto da Engenharia quanto da Ciência da Computação, cursando a matéria de Interface Humano-Computador da Universidade de Campinas, ministrada no primeiro semestre de 2018 pela Professora M. Cecília C. Baranauskas com assistência de @efduarte. [SaibaMais]
 
 # Primeiros Passos
 ---
@@ -52,7 +52,7 @@ Sublime | TBD
 
 [//]: # (Referências)
 
-    [Saiba Mais]: <https://andreycampassi.github.io/timetimetime/sobre>
+    [SaibaMais]: <https://andreycampassi.github.io/timetimetime/sobre>
     [Pincello]: <https://efduarte.github.io/pincello/#/>
     [aqui]: <https://efduarte.github.io/pincello/#/>
     [Sublime]: <https://www.sublimetext.com/>
